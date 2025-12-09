@@ -85,7 +85,7 @@ just download it as is and you wont run into any problems, after downloading, pu
 2.  **Trigger the DAG**
     - Find the DAG named **`medallion_full_pipeline`**.
     - Toggle the **ON/OFF** switch to **ON**.
-    - Click the **Play Button (▶)** under "Actions" to trigger a run.
+    - Click the **Play Button** under "Actions" to trigger a run.
 
 3.  **Monitor Progress**
     - Click on the DAG name to see the **Graph View**.
