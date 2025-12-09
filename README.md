@@ -95,7 +95,7 @@ just download it as is and you wont run into any problems, after downloading, pu
         2.  `ingest_...` (Bronze Ingestion)
         3.  `silver_...` (Silver Validation)
         4.  `dq_gatekeeper_check` (Quality Check)
-        5.  `gold_layer_aggregation` (Final Star Schema Build, this takes a while and my be heavy on the memory).
+        5.  `gold_layer_aggregation` (Final Star Schema Build, this takes a while and my be heavy on the memory, you can try to allot more memory to wsl by doing the first step on troubleshooting).
 
 *Note: The Gold aggregation is resource-intensive and may take 10-20 minutes.*
 
