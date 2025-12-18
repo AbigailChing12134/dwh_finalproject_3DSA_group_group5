@@ -66,9 +66,12 @@ just download it as is and you wont run into any problems, after downloading, pu
 
     ```bash
     # 1. Build the custom image (Installs Pandas/SQLAlchemy) and Init DB
-    docker-compose up --build airflow-init
+    docker-compose up -d --build
 
-    # 2. Start the Services (Airflow Webserver, Scheduler, Postgres)
+    # 2. Build the airflow containers
+    docker-compose up airflow-init
+    
+    # 3. Start the Services (Airflow Webserver, Scheduler, Postgres)
     docker-compose up -d
     ```
 
