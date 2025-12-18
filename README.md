@@ -234,62 +234,15 @@ ini
 
 ---
 
-## Linking the Tableau Public Dashboard
+## Data Visualization (Tableau)
 
-This project is connected to an existing Tableau Public dashboard. Instead of using a local `.twb` or `.twbx` file, the dashboard can be repointed to the PostgreSQL database running inside the Docker container.
+The final Gold-layer Star Schema produced by this pipeline is consumed by a Tableau dashboard.
 
 **Tableau Public Dashboard:**  
 https://public.tableau.com/app/profile/liza.marie.valdez/viz/DMW-FinalDashboard/Dashboard1#1
 
-### 1. Open the Tableau Public Dashboard (Desktop)
+The dashboard connects directly to the PostgreSQL data warehouse 
 
-1.  Open **Tableau Desktop**.
-2.  Go to **File** > **Open** and sign in to your **Tableau Public** account if prompted.
-3.  Open the published dashboard:
-    - `DMW-FinalDashboard`
-    - View: `Dashboard1`
-
----
-
-### 2. Update the Data Connection
-
-1.  In Tableau Desktop, go to the **Data** menu at the top.
-2.  Select the existing data source > **Edit Connection**.
-3.  Enter the Docker PostgreSQL credentials:
-
-    - **Server:** localhost
-    - **Port:** 5432
-    - **Database:** bronze
-    - **Username:** postgres
-    - **Password:** postgres
-
-4.  Click **Sign In**.
-
----
-
-### 3. Map to the Gold Layer
-
-1.  In the **Data Source** tab, ensure the **Schema** is set to `gold`.
-2.  If the dashboard was originally built on different table or column names, Tableau may display **red exclamation marks** on fields.
-3.  Fix broken fields by:
-    - Right-clicking the broken field in the **Data** pane
-    - Selecting **Replace References**
-    - Mapping the old field name to the correct column from:
-        - `fact_order`
-        - `dim_user`
-        - `dim_product`
-        - other `dim_*` tables
-
----
-
-### 4. Verify the Star Schema
-
-1.  Ensure the **Fact table (`fact_order`)** is positioned at the center of your joins.
-2.  Confirm that all **Dimension tables** (`dim_user`, `dim_product`, etc.) are:
-    - Joined to `fact_order`
-    - Using **LEFT JOINS**
-
-*This ensures no sales data is lost if a dimension record is missing.*
 
 ---
 
