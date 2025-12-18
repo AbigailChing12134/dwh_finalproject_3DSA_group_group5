@@ -139,43 +139,97 @@ To inspect the final tables and Entity-Relationship Diagram (ERD):
 
 ---
 
-## Troubleshooting
+## Linking an Existing Tableau Dashboard
 
-**Issue: "Input/output error" or Docker crashes**
-* **Fix:** WSL ran out of memory. 
-    1.  Create a `.wslconfig` file in your Windows User Home (`C:\Users\YourUser\.wslconfig`).
+If you already have a pre-built Tableau dashboard, you can swap the data source to the PostgreSQL instance running inside the Docker container.
+
+### 1. Update the Data Connection
+
+1.  Open your Tableau workbook (.twb or .twbx).
+2.  Go to the Data menu at the top and select your existing data source > Edit Connection.
+3.  Enter the Docker PostgreSQL credentials:
+
+    - **Server:** localhost
+    - **Port:** 5432
+    - **Database:** bronze
+    - **Username:** postgres
+    - **Password:** postgres
+
+4.  Click Sign In.
+
+---
+
+### 2. Map to the Gold Layer
+
+1.  In the Data Source tab, ensure the Schema is set to gold.
+2.  If your existing dashboard used different table names, Tableau may show red exclamation marks on your fields.
+3.  Replace References:
+    - Right-click on a broken field in the Data pane
+    - Select Replace References
+    - Map the old field name to the new field name from:
+        - fact_order
+        - dim_user
+        - dim_product
+        - other dim_ tables
+
+---
+
+### 3. Verify the Star Schema
+
+1.  Ensure that your Fact table (fact_order) is at the center of your joins.
+2.  Confirm that your Dimension tables (dim_user, dim_product, etc.) are joined via Left Joins to ensure no sales data is lost if a dimension record is missing.
+
+
+## Troubleshooting
+*Issue: "Input/output error" or Docker crashes*
+* *Fix:* WSL ran out of memory. 
+    1.  Create a .wslconfig file in your Windows User Home (C:\Users\YourUser\.wslconfig).
     2.  Paste this configuration:
 
-    ```ini
+    
+ini
     [wsl2]
     memory=12GB
     swap=4GB
     autoMemoryReclaim=dropcache 
-    ```
+    
 
-    3.  Run `wsl --shutdown` in PowerShell (Admin).
+    3.  Run wsl --shutdown in PowerShell (Admin).
     4.  Restart Docker Desktop.
 
-**Issue: "Relation does not exist" or Schema Errors**
-* **Fix:** The database is out of sync with the code. Reset it:
-    ```bash
+*Issue: "Relation does not exist" or Schema Errors*
+* *Fix:* The database is out of sync with the code. Reset it:
+    
     docker-compose down --volumes
     docker-compose up -d --build
     docker-compose up airflow-init
     docker-compose up -d
-    ```
+    
 
-**Issue: Airflow UI not loading**
-* **Fix:** Wait 60 seconds for the webserver to boot. If it persists, restart it:
-    ```bash
+*Issue: Airflow UI not loading*
+* *Fix:* Wait 60 seconds for the webserver to boot. If it persists, restart it:
+    
     docker-compose restart airflow-webserver
-    ```
+    
 
-**Issue: Pipeline seems stuck**
-* **Fix:** Check if it's actually working (high CPU usage) or frozen (zero CPU usage):
-    ```bash
+*Issue: Pipeline seems stuck*
+* *Fix:* Check if it's actually working (high CPU usage) or frozen (zero CPU usage):
+    
     docker stats
-    ```
+    
+
+*Issue: pgAdmin cannot connect due to incorrect password*
+* *Fix:* Sometimes PostgreSQL services on Windows cause connection issues.
+    1. Press *Windows + R*, type services.msc, and press *Enter*.
+    2. Look for *PostgreSQL* (any PostgreSQL-related service).
+    3. Stop the service.
+    4. Try connecting to pgAdmin again.
+
+*Notes*
+* Code patterns and configurations were adapted from references *[5]*, *[6]*, and *[7]*.
+* Large Language Models referenced in *[8]* and *[9]* were used to check and validate the pipeline implementation.
+Write to Kathleen Mina
+
 
                 ˗ ˏ ˋ ★ˎˊ ˗    ༺𝓜𝓮𝓻𝓻𝔂༻༺𝓒𝓱𝓻𝓲𝓼𝓽𝓶𝓪𝓼༻  ˗ ˏ ˋ ★ˎˊ ˗   
 
