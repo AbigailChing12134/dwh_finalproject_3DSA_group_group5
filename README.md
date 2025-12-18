@@ -29,13 +29,15 @@ This project ingests raw data from multiple formats (CSV, JSON, Parquet, Excel, 
 To run the pipeline, you must have the following installed:
 * **Docker Desktop** (Installed & Running with WSL 2 enabled).
 * **pgAdmin 4** (Optional, for viewing data schemas).
-
+* **Data** (in case of complications involving data on github, download directly on drive to preserve integrity)
+  
 ### 2. Installation & Setup
 
 1.  **Download the repository**
     Clone or download this repository.
+    **for data, if error rises download from this link** https://drive.google.com/drive/folders/1nuLa1Chepulb6ewbPmtRifycDPRFr05n?usp=drive_link
 
-2.  **Prepare the Environment**
+3.  **Prepare the Environment**
     Ensure your folder structure looks like this:
     ```text
     .
@@ -44,6 +46,9 @@ To run the pipeline, you must have the following installed:
     ├── scripts/               # Python & SQL Scripts
     ├── infra/                 # Docker config
     ├── docker-compose.yaml    # Docker Orchestration
+    ├── Dockerfile             # Docker instructions
+    ├── plugins                # plugins, if to be added in the future
+    ├── License                # License
     └── README.md
     ```
 just download it as is and you wont run into any problems, after downloading, put the project folder in your home folder on linux
@@ -57,28 +62,21 @@ just download it as is and you wont run into any problems, after downloading, pu
     *(Replace with your actual folder path).*
 
 
-
     Run the following commands to build and start the containers:
 
     ```bash
     # 1. Build the custom image (Installs Pandas/SQLAlchemy) and Init DB
-    docker-compose up --build
+    docker-compose up --build airflow-init
 
-    # 2. Start the Airflow services
-    docker-compose up airflow-init
-
-    # 3.  Start the containers (Airflow Webserver, Scheduler, Postgres)
+    # 2. Start the Services (Airflow Webserver, Scheduler, Postgres)
     docker-compose up -d
     ```
 
-5.  **Verify Services are Running**
+4.  **Verify Services are Running**
     ```bash
     docker ps
     ```
     *You should see healthy containers for `airflow-webserver`, `airflow-scheduler`, and `postgres_dwh`.*
-
-alternatively you can check docker desktop to manage the containers for #2 and #3
-
 
 *ੈ🎄✩‧₊*ੈ🎄✩‧₊*ੈ🎄✩‧₊*ੈ🎄✩‧₊*ੈ🎄✩‧₊*ੈ🎄✩‧₊*ੈ🎄✩‧₊*ੈ🎄✩‧₊*ੈ🎄✩‧₊*ੈ🎄✩‧₊*ੈ🎄✩‧₊*ੈ🎄✩‧₊*ੈ🎄✩‧₊*ੈ🎄✩‧₊*ੈ🎄✩‧₊*ੈ🎄✩‧₊*ੈ🎄✩‧₊*ੈ🎄✩‧₊*ੈ🎄✩‧₊*ੈ🎄✩‧₊*ੈ🎄✩‧₊*ੈ🎄
 
@@ -92,7 +90,7 @@ alternatively you can check docker desktop to manage the containers for #2 and #
 2.  **Trigger the DAG**
     - Find the DAG named **`medallion_full_pipeline`**.
     - Toggle the **ON/OFF** switch to **ON**.
-    - Click the **Play Button (▶)** under "Actions" to trigger a run.
+    - Click the **Play Button** under "Actions" to trigger a run.
 
 3.  **Monitor Progress**
     - Click on the DAG name to see the **Graph View**.
@@ -102,7 +100,7 @@ alternatively you can check docker desktop to manage the containers for #2 and #
         2.  `ingest_...` (Bronze Ingestion)
         3.  `silver_...` (Silver Validation)
         4.  `dq_gatekeeper_check` (Quality Check)
-        5.  `gold_layer_aggregation` (Final Star Schema Build, this takes a while and my be heavy on the memory).
+        5.  `gold_layer_aggregation` (Final Star Schema Build, this takes a while and my be heavy on the memory, you can try to allot more memory to wsl by doing the first step on troubleshooting).
 
 *Note: The Gold aggregation is resource-intensive and may take 10-20 minutes.*
 
