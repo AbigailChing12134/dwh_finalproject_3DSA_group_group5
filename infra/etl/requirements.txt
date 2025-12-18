@@ -1,0 +1,9 @@
+pandas
+pyarrow
+sqlalchemy
+psycopg2-binary
+openpyxl
+lxml
+python-dateutil
+
+
