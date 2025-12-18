@@ -57,21 +57,28 @@ just download it as is and you wont run into any problems, after downloading, pu
     *(Replace with your actual folder path).*
 
 
+
     Run the following commands to build and start the containers:
 
     ```bash
     # 1. Build the custom image (Installs Pandas/SQLAlchemy) and Init DB
-    docker-compose up --build airflow-init
+    docker-compose up --build
 
-    # 2. Start the Services (Airflow Webserver, Scheduler, Postgres)
+    # 2. Start the Airflow services
+    docker-compose up airflow-init
+
+    # 3.  Start the containers (Airflow Webserver, Scheduler, Postgres)
     docker-compose up -d
     ```
 
-4.  **Verify Services are Running**
+5.  **Verify Services are Running**
     ```bash
     docker ps
     ```
     *You should see healthy containers for `airflow-webserver`, `airflow-scheduler`, and `postgres_dwh`.*
+
+alternatively you can check docker desktop to manage the containers for #2 and #3
+
 
 *ੈ🎄✩‧₊*ੈ🎄✩‧₊*ੈ🎄✩‧₊*ੈ🎄✩‧₊*ੈ🎄✩‧₊*ੈ🎄✩‧₊*ੈ🎄✩‧₊*ੈ🎄✩‧₊*ੈ🎄✩‧₊*ੈ🎄✩‧₊*ੈ🎄✩‧₊*ੈ🎄✩‧₊*ੈ🎄✩‧₊*ੈ🎄✩‧₊*ੈ🎄✩‧₊*ੈ🎄✩‧₊*ੈ🎄✩‧₊*ੈ🎄✩‧₊*ੈ🎄✩‧₊*ੈ🎄✩‧₊*ੈ🎄✩‧₊*ੈ🎄
 
