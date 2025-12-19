@@ -35,7 +35,7 @@ To run the pipeline, you must have the following installed:
 
 1.  **Download the repository**
     Clone or download this repository.
-    **for data, due to size limitations please access the link** https://drive.google.com/drive/folders/1nuLa1Chepulb6ewbPmtRifycDPRFr05n?usp=drive_link
+    **for data, due to size limitations please access the link(use the raw data folder)** https://drive.google.com/drive/folders/1nuLa1Chepulb6ewbPmtRifycDPRFr05n?usp=drive_link
 
 3.  **Prepare the Environment**
     Ensure your folder structure looks like this:
