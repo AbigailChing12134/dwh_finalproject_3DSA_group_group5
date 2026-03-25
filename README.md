@@ -1,11 +1,10 @@
 # End-to-End Data Engineering Pipeline (Medallion Architecture)
-⋆❅*𖢔𐂂꙳𝓜𝓮𝓻𝓻𝔂 𝓬𝓱𝓻𝓲𝓼𝓽𝓶𝓪𝓼⋆꙳•❅*‧ ‧*❆ ₊⋆
 
 This project implements a complete Data Warehouse pipeline using **Apache Airflow**, **Docker**, and **PostgreSQL**. It follows the **Medallion Architecture** (Bronze → Silver → Gold) to transform raw data into a Star Schema optimized for analytics.
 
 This project ingests raw data from multiple formats (CSV, JSON, Parquet, Excel, HTML, Pickle), cleans and validates it, and transforms it into a Star Schema ready for analytics.
 
-°❆🎄⋆.ೃ࿔🎁*:･:*🦌°❆🎄⋆.ೃ࿔🎁*:･:*🦌°❆🎄⋆.ೃ࿔🎁*:･:*🦌°❆🎄⋆.ೃ࿔🎁*:･:*🦌°❆🎄⋆.ೃ࿔🎁*:･:*🦌°❆🎄⋆.ೃ࿔🎁*:･:*🦌°❆🎄⋆.ೃ࿔🎁*:･:*🦌°❆🎄⋆.ೃ࿔🎁*:･:*🦌°❆🎄⋆.ೃ࿔🎁*:･:*🦌
+----------------------------------------------------------------------------------------------------------------------------
 
 # Architecture Overview
 
@@ -21,7 +20,7 @@ This project ingests raw data from multiple formats (CSV, JSON, Parquet, Excel, 
     - **Star Schema:** Denormalized Dimension tables (`dim_user`, `dim_product`) and Fact tables (`fact_order`).
     - **Business Ready:** Optimized for reporting (Revenue, Sales Performance, Delays).
 
-*ੈ🎄✩‧₊*ੈ🎄✩‧₊*ੈ🎄✩‧₊*ੈ🎄✩‧₊*ੈ🎄✩‧₊*ੈ🎄✩‧₊*ੈ🎄✩‧₊*ੈ🎄✩‧₊*ੈ🎄✩‧₊*ੈ🎄✩‧₊*ੈ🎄✩‧₊*ੈ🎄✩‧₊*ੈ🎄✩‧₊*ੈ🎄✩‧₊*ੈ🎄✩‧₊*ੈ🎄✩‧₊*ੈ🎄✩‧₊*ੈ🎄✩‧₊*ੈ🎄✩‧₊*ੈ🎄✩‧₊*ੈ🎄✩‧₊*ੈ🎄
+----------------------------------------------------------------------------------------------------------------------------
 
 # Getting Started
 
@@ -81,7 +80,7 @@ just download it as is and you wont run into any problems, after downloading, pu
     ```
     *You should see healthy containers for `airflow-webserver`, `airflow-scheduler`, and `postgres_dwh`.*
 
-*ੈ🎄✩‧₊*ੈ🎄✩‧₊*ੈ🎄✩‧₊*ੈ🎄✩‧₊*ੈ🎄✩‧₊*ੈ🎄✩‧₊*ੈ🎄✩‧₊*ੈ🎄✩‧₊*ੈ🎄✩‧₊*ੈ🎄✩‧₊*ੈ🎄✩‧₊*ੈ🎄✩‧₊*ੈ🎄✩‧₊*ੈ🎄✩‧₊*ੈ🎄✩‧₊*ੈ🎄✩‧₊*ੈ🎄✩‧₊*ੈ🎄✩‧₊*ੈ🎄✩‧₊*ੈ🎄✩‧₊*ੈ🎄✩‧₊*ੈ🎄
+----------------------------------------------------------------------------------------------------------------------------
 
 ## Running the Pipeline
 
@@ -107,7 +106,7 @@ just download it as is and you wont run into any problems, after downloading, pu
 
 *Note: The Gold aggregation is resource-intensive and may take 10-20 minutes.*
 
-*ੈ🎄✩‧₊*ੈ🎄✩‧₊*ੈ🎄✩‧₊*ੈ🎄✩‧₊*ੈ🎄✩‧₊*ੈ🎄✩‧₊*ੈ🎄✩‧₊*ੈ🎄✩‧₊*ੈ🎄✩‧₊*ੈ🎄✩‧₊*ੈ🎄✩‧₊*ੈ🎄✩‧₊*ੈ🎄✩‧₊*ੈ🎄✩‧₊*ੈ🎄✩‧₊*ੈ🎄✩‧₊*ੈ🎄✩‧₊*ੈ🎄✩‧₊*ੈ🎄✩‧₊*ੈ🎄✩‧₊*ੈ🎄✩‧₊*ੈ🎄
+----------------------------------------------------------------------------------------------------------------------------
 
 ## Viewing the Data (pgAdmin 4)
 
@@ -230,7 +229,6 @@ ini
 * Large Language Models referenced in *[8]* and *[9]* were used to check and validate the pipeline implementation.
 
 
-                ˗ ˏ ˋ ★ˎˊ ˗    ༺𝓜𝓮𝓻𝓻𝔂༻༺𝓒𝓱𝓻𝓲𝓼𝓽𝓶𝓪𝓼༻  ˗ ˏ ˋ ★ˎˊ ˗   
 
 ---
 
@@ -241,23 +239,7 @@ The final Gold-layer Star Schema produced by this pipeline is consumed by a Tabl
 **Tableau Public Dashboard:**  
 https://public.tableau.com/app/profile/liza.marie.valdez/viz/DMW-FinalDashboard/Dashboard1#1
 
-The dashboard connects directly to the PostgreSQL data warehouse 
-
-
----
-
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⠀⠀⣤⣶⢄⡿⢿⣭⣁⠴⡤⡀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠠⠂⠤⡀⠰⠁⠀⠀⠀⠀⠀⠉⠓⢦⡀⠉⠛⢮⡊⢂⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡇⠀⢄⠈⠋⠐⠒⡦⢤⣀⡀⠀⠀⠀⠈⢢⡀⠀⢳⡀⠆⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡇⠀⠀⠀⠀⠀⠑⠁⠐⠜⠉⠒⢄⡀⠀⠀⠱⡀⣈⢸⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⠇⠀⠀⢠⢤⡀⠀⠀⠀⠀⠀⣀⣄⡉⠢⡀⠀⢳⠑⢦⡄⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡏⢈⠍⠁⢖⠂⡤⡀⠸⡟⢀⣤⠄⡲⠂⠩⡙⢧⡌⢡⠒⠁⠲⡀
-⠀⠀⠀⠀⠀⠀⠀⠀⠈⢉⣇⠈⠤⠠⠜⠒⠛⠧⠜⠳⠬⠟⠉⠣⠄⠤⢁⣹⠉⠹⣀⢀⣠⠃
-⣠⠴⠒⠲⢦⣄⠀⠀⠀⠀⠘⢦⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡴⠁⠈⠀⠀⠀⠀⠀
-⡇⠀⠀⠘⣀⠜⢷⡀⠀⠀⠀⠀⠙⣷⠂⠀⠀⠀⠀⠀⠀⠀⠀⠀⢾⠁⠀⠀⠀⠀⠀⠀⠀⠀
-⠙⠦⣄⡀⠀⠀⠐⢳⠀⠀⠀⢀⡾⢁⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⣧⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠉⢢⡀⠐⠚⡇⠀⠀⡾⠃⠀⠊⠀⠀⠀⠀⠀⠀⠀⠀⠀⡉⠘⣆⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⢣⠀⠀⣷⠀⢸⠃⠒⠄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠐⠺⡆⠀⠀⠀⠀⠀⠀
+The dashboard connects directly to the PostgreSQL data warehouse ⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠈⡄⠀⣿⠀⡿⠀⠒⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠠⡈⢳⠀⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⢱⠀⢸⣰⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⢹⡀⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀⢇⠈⢿⡇⠀⠀⠀⠄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⠇⠀⠀⠀⠀⠀
