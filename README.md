@@ -240,9 +240,3 @@ The final Gold-layer Star Schema produced by this pipeline is consumed by a Tabl
 https://public.tableau.com/app/profile/liza.marie.valdez/viz/DMW-FinalDashboard/Dashboard1#1
 
 The dashboard connects directly to the PostgreSQL data warehouse ⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠈⡄⠀⣿⠀⡿⠀⠒⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠠⡈⢳⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⢱⠀⢸⣰⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⢹⡀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⢇⠈⢿⡇⠀⠀⠀⠄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⠇⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠈⢆⠀⠃⠀⠀⠀⠰⡀⠀⠀⠀⡆⠀⠀⠀⢠⠀⠀⠀⣸⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠳⣀⠀⠀⠀⠀⢳⠀⠀⠀⡇⠀⠀⠀⠎⠀⢀⡴⠃⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠁⠒⠠⠤⠤⣕⣀⣄⢇⣀⣀⠞⠒⠚⠉⠀⠀⠀⠀⠀⠀⠀⠀
